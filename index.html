@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cérebro POLOTTOMED — ao vivo</title>
+<style>
+/* Monitor neural ao vivo — cérebro em perfil, estados vindos de status.json (branch dados) */
+:root{
+  --bg:#0a0e18; --surface:#111726; --surface2:#182138; --line:#273354;
+  --fg:#e9edf8; --muted:#8e99b6; --faint:#5b6684;
+  --syn:#8f9dff; --syn2:#c6b8ff;
+  --ok:#3ddc97; --standby:#f0b35c; --off:#5f6a84; --bad:#ff6b6b;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:
+    radial-gradient(1100px 600px at 35% 30%, #121a30 0%, transparent 60%),
+    radial-gradient(800px 500px at 85% 80%, #131226 0%, transparent 65%),
+    var(--bg);
+  color:var(--fg); font-family:system-ui, 'Segoe UI', sans-serif; font-size:15px; line-height:1.5;
+  padding:0 16px; min-height:100vh;
+}
+.wrap{max-width:1360px; margin:0 auto; padding:18px 0 28px; display:flex; flex-direction:column; gap:14px}
+header.top{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 18px}
+h1{font-weight:700; font-size:clamp(22px,3.4vw,30px); margin:0; letter-spacing:.2px}
+h1 small{font-weight:500; color:var(--muted); font-size:.55em; letter-spacing:.8px; text-transform:uppercase}
+#liveBadge{font-family:Consolas,monospace; font-size:12px; padding:4px 12px; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--muted); margin-left:auto}
+#liveBadge.on{border-color:var(--ok); color:var(--ok)}
+#liveBadge.stale{border-color:var(--bad); color:var(--bad)}
+.counts{display:flex; gap:8px; flex-wrap:wrap}
+.count{font-family:Consolas,monospace; font-size:12px; padding:4px 10px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--muted); white-space:nowrap}
+.count .dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:1px}
+main{display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:14px; align-items:start}
+.stage{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; min-width:0}
+.stage svg{display:block; width:100%; height:auto}
+.legend{position:absolute; left:14px; top:12px; display:flex; flex-direction:column; gap:5px; font-size:11.5px; color:var(--muted); font-family:Consolas,monospace; pointer-events:none}
+.legend span .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.journey-bar{position:absolute; left:14px; right:14px; bottom:12px; display:flex; align-items:center; gap:10px}
+.journey-bar button{font-weight:600; font-size:13px; color:var(--bg); background:var(--syn); border:none; border-radius:999px; padding:9px 16px; cursor:pointer}
+.journey-bar button:hover{background:var(--syn2)}
+.journey-bar button.ghost{background:transparent; color:var(--muted); border:1px solid var(--line); font-weight:500}
+.journey-caption{flex:1; min-width:0; font-size:13.5px; background:rgba(24,33,56,.9); border:1px solid var(--line); border-radius:12px; padding:8px 14px; display:none}
+.journey-caption .step-n{font-family:Consolas,monospace; color:var(--syn); margin-right:8px; font-size:12px}
+.stage.playing .journey-caption{display:block}
+aside.panel{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px; min-width:0}
+.panel h2{font-size:19px; margin:0 0 2px; font-weight:700}
+.panel .region{font-family:Consolas,monospace; font-size:11.5px; color:var(--syn); text-transform:uppercase; letter-spacing:1px; margin-bottom:10px}
+.panel .status-line{display:inline-flex; align-items:center; gap:7px; font-family:Consolas,monospace; font-size:12px; padding:4px 11px; border-radius:999px; border:1px solid var(--line); margin-bottom:12px}
+.panel .status-line .dot{width:9px; height:9px; border-radius:50%}
+.panel p{margin:0 0 10px; font-size:14px}
+.panel p.dim{color:var(--muted); font-size:13.5px}
+footer{color:var(--faint); font-size:12.5px; font-family:Consolas,monospace; text-align:center; padding-top:2px}
+.brain-fill{fill:url(#brainGrad); stroke:#2c3b63; stroke-width:1.6}
+.gyri{fill:none; stroke:#2a3760; stroke-width:1.1; opacity:.55}
+.edge{fill:none; stroke-width:1.6; opacity:.42}
+.edge.st-fast,.edge.st-on{stroke:var(--syn)}
+.edge.st-slow{stroke:var(--syn2); stroke-dasharray:1 7; stroke-linecap:round}
+.edge.st-manual{stroke:var(--standby); stroke-dasharray:5 6; opacity:.5}
+.edge.st-off{stroke:var(--off); stroke-dasharray:3 7; opacity:.35}
+.pulse{fill:#dfe6ff; pointer-events:none}
+.node{cursor:pointer; outline:none}
+.node .core{stroke-width:1.5}
+.node.s-ok .core{fill:#12372c; stroke:var(--ok)}
+.node.s-standby .core{fill:#3a2d14; stroke:var(--standby)}
+.node.s-off .core{fill:#1b2130; stroke:var(--off)}
+.node.s-bad .core{fill:#3a1518; stroke:var(--bad)}
+.node .halo{fill:none; stroke-width:1.4; opacity:0; transform-box:fill-box; transform-origin:center}
+.node.s-ok .halo{stroke:var(--ok); animation:halo 2.6s ease-out infinite}
+.node.s-standby .halo{stroke:var(--standby); animation:halo 4.5s ease-out infinite}
+.node.s-bad .halo{stroke:var(--bad); animation:halo 1.4s ease-out infinite}
+@keyframes halo{0%{opacity:.55; transform:scale(1)} 75%{opacity:0; transform:scale(1.9)} 100%{opacity:0; transform:scale(1.9)}}
+.node text{font-weight:600; font-size:13.5px; fill:var(--fg); text-anchor:middle; pointer-events:none; font-family:system-ui,sans-serif}
+.node text.sub{font-family:Consolas,monospace; font-weight:400; font-size:9.5px; fill:var(--muted)}
+.node text.idade{font-family:Consolas,monospace; font-weight:400; font-size:9px; fill:var(--faint)}
+.node.s-off text{fill:var(--muted)}
+.node:hover .core,.node:focus-visible .core{stroke-width:2.6}
+.node.selected .core{stroke-width:3}
+.chip{cursor:pointer; outline:none}
+.chip rect{fill:var(--surface2); stroke:var(--line); stroke-width:1.2}
+.chip:hover rect{stroke:var(--syn)}
+.chip.selected rect{stroke:var(--syn); stroke-width:2}
+.chip text{font-family:Consolas,monospace; font-size:12.5px; fill:var(--fg); text-anchor:middle; pointer-events:none}
+.stage.playing .edge,.stage.playing .node,.stage.playing .chip,.stage.playing .gyri{opacity:.10}
+.stage.playing .edge.lit{opacity:1; stroke-width:3; stroke:var(--syn2); stroke-dasharray:6 8; animation:flow .7s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-14}}
+.stage.playing .node.lit,.stage.playing .chip.lit{opacity:1}
+.stage.playing #pulseLayer{opacity:.08}
+@media (max-width:980px){ main{grid-template-columns:1fr} .legend{display:none} }
+@media (prefers-reduced-motion: reduce){ .node .halo{animation:none !important} .stage.playing .edge.lit{animation:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>Cérebro POLOTTOMED <small>ao vivo</small></h1>
+    <span id="liveBadge">conectando…</span>
+  </header>
+  <div class="counts" id="counts"></div>
+  <main>
+    <div class="stage" id="stage">
+      <svg viewBox="0 0 1230 780" aria-label="Mapa ao vivo do ecossistema">
+        <defs>
+          <radialGradient id="brainGrad" cx="48%" cy="42%" r="75%">
+            <stop offset="0%" stop-color="#1a2440"/><stop offset="100%" stop-color="#121a2e"/>
+          </radialGradient>
+        </defs>
+        <path class="brain-fill" d="M250,380 C240,300 310,200 430,160 C550,125 700,125 800,170 C900,212 965,305 955,395 C948,460 900,500 820,520 C740,538 620,545 520,540 C430,536 350,520 305,480 C270,452 255,420 250,380 Z"/>
+        <path class="brain-fill" d="M330,545 C320,505 365,485 420,490 C475,495 505,520 498,555 C490,590 440,608 390,602 C350,597 338,575 330,545 Z"/>
+        <path class="brain-fill" d="M485,535 C482,570 492,605 510,640 L540,628 C526,600 520,568 522,538 Z"/>
+        <path class="gyri" d="M320,250 C420,190 560,170 700,195"/>
+        <path class="gyri" d="M300,340 C430,300 560,310 700,280"/>
+        <path class="gyri" d="M380,470 C500,430 640,430 760,400"/>
+        <path class="gyri" d="M640,150 C610,250 600,330 630,420"/>
+        <g id="edgeLayer"></g><g id="pulseLayer"></g><g id="chipLayer"></g><g id="nodeLayer"></g>
+      </svg>
+      <div class="legend">
+        <span><span class="dot" style="background:var(--ok)"></span>ativo agora</span>
+        <span><span class="dot" style="background:var(--standby)"></span>manual / sob demanda</span>
+        <span><span class="dot" style="background:var(--bad)"></span>sem sinal (atenção)</span>
+        <span><span class="dot" style="background:var(--off)"></span>parado</span>
+      </div>
+      <div class="journey-bar">
+        <button id="btnJourney">▶ Jornada do lead</button>
+        <div class="journey-caption" id="caption"></div>
+        <button class="ghost" id="btnNext" hidden>Próximo</button>
+        <button class="ghost" id="btnStop" hidden>Parar</button>
+      </div>
+    </div>
+    <aside class="panel" id="panel"></aside>
+  </main>
+  <footer id="rodape">Estados reais via coletor Sinapse · sem dados de pacientes nesta página</footer>
+</div>
+
+<script>
+const STATUS_URL = 'https://raw.githubusercontent.com/pepolotto/cerebro-polottomed/dados/status.json';
+const NODES = {
+  estela:{x:660,y:450,r:26,name:'Estela',sub:'linguagem',region:'Broca & Wernicke — linguagem',desc:'Secretária virtual no WhatsApp: acolhe e qualifica leads, agenda no Feegow, atende o médico no número pessoal e responde às perguntas do Theo pela ponte.'},
+  ajudante:{x:545,y:385,r:16,name:'Ajudante',sub:'memória',region:'Hipocampo — memória',desc:'Braço de prontuário: navega no Feegow e monta resumos em PDF quando a Estela ou o Theo pedem.'},
+  theo:{x:845,y:295,r:21,name:'Theo',sub:'decisão',region:'Córtex pré-frontal — decisão',desc:'Gestor de tráfego e coordenador dos relatórios: Meta Ads, funil real, concorrentes, analytics do consultório e direção de conteúdo. Fala com o médico pelo Telegram.'},
+  arthur:{x:355,y:345,r:21,name:'Arthur',sub:'criação visual',region:'Córtex occipital — visual',desc:'Criador de conteúdo do Instagram: carrosséis, stories e agora também a edição de vídeo (EDITOR), com aprovação do médico no Telegram.'},
+  analytics:{x:575,y:215,r:18,name:'Analytics',sub:'análise',region:'Córtex parietal — análise',desc:'Dados reais do consultório (agendamentos, comparecimento, procedimentos, receita estimada), exportados sob demanda para o Theo.'},
+  boletim:{x:775,y:455,r:14,name:'Boletim',sub:'conhecimento',region:'Córtex temporal — conhecimento',desc:'App dos boletins científicos semanais (protótipo).'},
+  editor:{x:400,y:565,r:15,name:'EDITOR',sub:'vídeo',region:'Cerebelo — coordenação fina',desc:'Pipeline de edição de vídeo (corte, 9:16, legendas, capas) — acionado pelo Arthur.'},
+  agnes:{x:330,y:455,r:13,name:'Agnes',sub:'pessoal',region:'Occipital profundo',desc:'Geradora de imagens pessoal do doutor — fora do circuito comercial.'},
+  sinapse:{x:512,y:592,r:11,name:'Sinapse',sub:'funções vitais',region:'Tronco cerebral — funções vitais',desc:'O coletor deste painel: lê os batimentos de todos os agentes e publica este status, junto do autostart (pm2 + Inicializar).'}
+};
+const EXT = {
+  wa:{x:1115,y:415,name:'WhatsApp',region:'Boca e ouvido',desc:'Porta de entrada dos leads e canal pessoal do médico com a Estela.'},
+  feegow:{x:640,y:715,name:'Feegow',region:'Sistema vital',desc:'Agenda, pacientes e prontuário — a fonte da verdade clínica.'},
+  gagenda:{x:810,y:715,name:'Google Agenda',region:'Relógio',desc:'Fonte das vagas do Urofill.'},
+  metaads:{x:115,y:235,name:'Meta Ads',region:'Captação',desc:'Campanhas pagas monitoradas pelo Theo (somente leitura).'},
+  instagram:{x:110,y:420,name:'Instagram',region:'Expressão',desc:'@dr.pedro.paulo — publicação do Arthur e coleta de concorrentes do Theo.'},
+  telegram:{x:1005,y:655,name:'Telegram',region:'Nervo direto',desc:'Canal de comando: relatórios do Theo, aprovações do Arthur, modo engenheiro.'},
+  medico:{x:1120,y:560,name:'Dr. Pedro',region:'Consciência',desc:'A decisão final: aprova artes, confirma mudanças de código, informa valores ao funil.'},
+  youtube:{x:125,y:580,name:'YouTube',region:'Voz longa',desc:'Destino futuro dos vídeos do EDITOR.'}
+};
+const EDGES = [
+  {id:'e1', a:'wa', b:'estela', st:'fast', bi:true, c:[900,500], label:'Conversas de leads e pacientes, 24/7'},
+  {id:'e2', a:'estela', b:'ajudante', st:'on', bi:true, c:[595,435], label:'Ponte por arquivos: prontuários'},
+  {id:'e3', a:'ajudante', b:'feegow', st:'on', c:[520,560], label:'Prontuário via navegador'},
+  {id:'e4', a:'estela', b:'feegow', st:'on', c:[620,580], label:'API: pacientes e agendamento'},
+  {id:'e5', a:'estela', b:'gagenda', st:'on', c:[770,590], label:'Vagas Urofill'},
+  {id:'e6', a:'estela', b:'theo', st:'on', bi:true, c:[790,420], label:'Funil noturno + perguntas do Theo (ponte dupla)'},
+  {id:'e7', a:'theo', b:'metaads', st:'on', bi:true, c:[480,95], label:'Métricas de campanha (leitura)'},
+  {id:'e8', a:'metaads', b:'wa', st:'on', c:[615,25], label:'Anúncios geram conversas'},
+  {id:'e9', a:'theo', b:'arthur', st:'slow', c:[600,300], label:'Encomenda de peças e briefs'},
+  {id:'e10', a:'arthur', b:'instagram', st:'on', c:[210,370], label:'Publicação de posts e stories'},
+  {id:'e11', a:'instagram', b:'theo', st:'slow', c:[430,140], label:'Coleta semanal de concorrentes'},
+  {id:'e12', a:'arthur', b:'telegram', st:'on', c:[480,720], label:'Artes para aprovação'},
+  {id:'e13', a:'theo', b:'telegram', st:'on', c:[1070,420], label:'Alertas, relatórios e modo engenheiro'},
+  {id:'e14', a:'telegram', b:'medico', st:'on', c:[1075,600], label:'Você aprova e decide'},
+  {id:'e15', a:'medico', b:'wa', st:'on', c:[1165,488], label:'Comandos no número pessoal'},
+  {id:'e16', a:'theo', b:'analytics', st:'on', c:[700,230], label:'consultar_analytics: dados do consultório'},
+  {id:'e17', a:'editor', b:'youtube', st:'off', c:[260,610], label:'Publicação de vídeo (pendente de chaves)'},
+  {id:'e18', a:'arthur', b:'editor', st:'on', c:[345,470], label:'Edição de vídeo sob demanda'},
+  {id:'e19', a:'analytics', b:'feegow', st:'manual', c:[470,470], label:'API do Feegow'},
+  {id:'e20', a:'theo', b:'ajudante', st:'slow', c:[700,330], label:'acionar_ajudante (via Estela)'}
+];
+const JOURNEY = [
+  {n:['theo','metaads'], e:['e7'], t:'Theo acompanha as campanhas do Meta Ads todos os dias.'},
+  {n:['metaads','wa'], e:['e8'], t:'Um paciente vê o anúncio e chama no WhatsApp.'},
+  {n:['wa','estela'], e:['e1'], t:'Estela acolhe, qualifica e responde em segundos.'},
+  {n:['estela','gagenda','feegow'], e:['e5','e4'], t:'Ela consulta as vagas e agenda direto no Feegow.'},
+  {n:['theo','estela','ajudante','feegow'], e:['e6','e2','e3'], t:'Theo pergunta à Estela quem compareceu; o Ajudante confere no prontuário.'},
+  {n:['theo','analytics'], e:['e16'], t:'Theo cruza tudo com os dados reais do consultório (Analytics).'},
+  {n:['theo','telegram','medico'], e:['e13','e14'], t:'O relatório completo chega no Telegram do doutor.'},
+  {n:['theo','arthur','telegram','medico'], e:['e9','e12','e14'], t:'Theo encomenda conteúdo; Arthur cria e o doutor aprova.'},
+  {n:['arthur','editor'], e:['e18'], t:'O doutor grava; Arthur manda o vídeo ao EDITOR para corte, legenda e 9:16.'},
+  {n:['arthur','instagram'], e:['e10'], t:'Aprovado, vai ao ar no @dr.pedro.paulo — e o ciclo recomeça.'}
+];
+const CLASSE = { ativo:'s-ok', manual:'s-standby', sob_demanda:'s-standby', atencao:'s-bad', parado:'s-off' };
+const ROTULO = { ativo:'ativo', manual:'manual', sob_demanda:'sob demanda', atencao:'SEM SINAL', parado:'parado' };
+const svgNS='http://www.w3.org/2000/svg';
+const $=id=>document.getElementById(id);
+const edgeLayer=$('edgeLayer'), pulseLayer=$('pulseLayer'), nodeLayer=$('nodeLayer'), chipLayer=$('chipLayer'), panel=$('panel'), stage=$('stage');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let DADOS=null;
+function pos(id){ return NODES[id]||EXT[id]; }
+function el(tag,attrs,parent){ const e=document.createElementNS(svgNS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; }
+const edgeEls={};
+EDGES.forEach(ed=>{
+  const A=pos(ed.a), B=pos(ed.b);
+  const p=el('path',{d:`M${A.x},${A.y} Q${ed.c[0]},${ed.c[1]} ${B.x},${B.y}`,class:'edge st-'+ed.st,'data-id':ed.id},edgeLayer);
+  const t=el('title',{},p); t.textContent=ed.label;
+  edgeEls[ed.id]={path:p, len:p.getTotalLength(), def:ed};
+});
+for(const id in EXT){
+  const c=EXT[id], W=136, H=42;
+  const g=el('g',{class:'chip','data-id':id,tabindex:'0',role:'button'},chipLayer);
+  el('rect',{x:c.x-W/2,y:c.y-H/2,width:W,height:H,rx:10},g);
+  const tx=el('text',{x:c.x,y:c.y+4.5},g); tx.textContent=c.name;
+}
+const nodeEls={};
+for(const id in NODES){
+  const n=NODES[id];
+  const g=el('g',{class:'node s-off','data-id':id,tabindex:'0',role:'button'},nodeLayer);
+  el('circle',{class:'halo',cx:n.x,cy:n.y,r:n.r},g);
+  el('circle',{class:'core',cx:n.x,cy:n.y,r:n.r},g);
+  const above = n.y < 300 || id==='ajudante';
+  const ty = above ? n.y-n.r-26 : n.y+n.r+18;
+  const t1=el('text',{x:n.x,y:ty},g); t1.textContent=n.name;
+  const t2=el('text',{x:n.x,y:ty+13,class:'sub'},g); t2.textContent=n.sub;
+  const t3=el('text',{x:n.x,y:ty+25,class:'idade'},g);
+  nodeEls[id]={g,idade:t3};
+}
+// pulsos (cadência simulada; os ESTADOS são reais)
+const pulses=[]; const RATE={fast:900,on:2000,slow:4200};
+function estadoDe(id){ return (DADOS&&DADOS.agentes&&DADOS.agentes[id]&&DADOS.agentes[id].estado)||'parado'; }
+if(!reduced){
+  EDGES.forEach(ed=>{
+    const ms=RATE[ed.st]; if(!ms) return;
+    const mk=dir=>{ pulses.push({ed:edgeEls[ed.id],t:dir>0?0:1,dir,c:el('circle',{class:'pulse',r:ed.st==='fast'?3.4:2.8},pulseLayer)}); };
+    setInterval(()=>{
+      if(stage.classList.contains('playing')) return;
+      // só pulsa se as duas pontas (quando são agentes) estiverem vivas
+      const vivo=k=>!NODES[k]||['ativo','sob_demanda','manual'].includes(estadoDe(k));
+      if(!vivo(ed.a)||!vivo(ed.b)) return;
+      mk(1); if(ed.bi) setTimeout(()=>mk(-1),ms/2);
+    }, ms+Math.random()*600);
+  });
+  let last=performance.now();
+  (function loop(now){
+    const dt=(now-last)/1000; last=now;
+    for(let i=pulses.length-1;i>=0;i--){
+      const p=pulses[i]; p.t+=p.dir*dt*200/p.ed.len;
+      if(p.t<0||p.t>1){ p.c.remove(); pulses.splice(i,1); continue; }
+      const pt=p.ed.path.getPointAtLength(p.t*p.ed.len);
+      p.c.setAttribute('cx',pt.x); p.c.setAttribute('cy',pt.y);
+    }
+    requestAnimationFrame(loop);
+  })(last);
+}
+function idadeTxt(iso){
+  if(!iso) return '';
+  const min=Math.round((Date.now()-Date.parse(iso))/60000);
+  if(min<1) return 'agora';
+  if(min<60) return `há ${min} min`;
+  if(min<1440) return `há ${Math.round(min/60)} h`;
+  return `há ${Math.round(min/1440)} d`;
+}
+function aplicar(d){
+  DADOS=d;
+  const cont={ativo:0,manual:0,atencao:0,parado:0};
+  for(const id in NODES){
+    const a=(d.agentes||{})[id]||{};
+    const est=a.estado||'parado';
+    cont[est==='sob_demanda'?'manual':(cont[est]!==undefined?est:'parado')]++;
+    nodeEls[id].g.setAttribute('class','node '+(CLASSE[est]||'s-off')+(nodeEls[id].g.classList.contains('selected')?' selected':''));
+    nodeEls[id].idade.textContent=idadeTxt(a.ultimo_sinal);
+  }
+  $('counts').innerHTML=[
+    `<span class="count"><span class="dot" style="background:var(--ok)"></span>${cont.ativo} ativos</span>`,
+    `<span class="count"><span class="dot" style="background:var(--standby)"></span>${cont.manual} manuais</span>`,
+    cont.atencao?`<span class="count"><span class="dot" style="background:var(--bad)"></span>${cont.atencao} sem sinal</span>`:'',
+    `<span class="count"><span class="dot" style="background:var(--off)"></span>${cont.parado} parados</span>`,
+  ].join('');
+  const idade=(Date.now()-Date.parse(d.gerado_em||0))/60000;
+  const b=$('liveBadge');
+  if(idade<12){ b.textContent='● ao vivo · coleta '+idadeTxt(d.gerado_em); b.className='on'; }
+  else { b.textContent='coletor sem sinal '+idadeTxt(d.gerado_em); b.className='stale'; }
+}
+async function atualizar(){
+  try{
+    const r=await fetch(STATUS_URL+'?v='+Date.now(),{cache:'no-store'});
+    if(!r.ok) throw new Error(r.status);
+    aplicar(await r.json());
+  }catch(e){
+    const b=$('liveBadge'); b.textContent='sem conexão com os dados'; b.className='stale';
+  }
+}
+atualizar(); setInterval(atualizar,60000);
+// painel lateral
+function showNode(id){
+  const n=NODES[id]||EXT[id]; const a=DADOS&&DADOS.agentes&&DADOS.agentes[id];
+  const est=a?(a.estado||'parado'):null;
+  const cor=est?{ 'ativo':'var(--ok)','manual':'var(--standby)','sob_demanda':'var(--standby)','atencao':'var(--bad)','parado':'var(--off)' }[est]:'var(--syn)';
+  panel.innerHTML=`<h2>${n.name}</h2><div class="region">${n.region}</div>`+
+    (est?`<span class="status-line"><span class="dot" style="background:${cor}"></span>${ROTULO[est]||est} · ${idadeTxt(a.ultimo_sinal)||'sem sinal'}</span>`:'')+
+    `<p>${n.desc}</p>`+
+    (a&&a.detalhe?`<p class="dim">${a.detalhe}</p>`:'');
+  document.querySelectorAll('.selected').forEach(e=>e.classList.remove('selected'));
+  const e=document.querySelector(`[data-id="${id}"]`); if(e) e.classList.add('selected');
+}
+function overview(){
+  panel.innerHTML=`<h2>Visão geral</h2><div class="region">como ler</div>
+  <p>Cada região é um agente real rodando no consultório; os estados e batimentos vêm do coletor Sinapse (atualização ~1 min). Clique em qualquer região.</p>
+  <p class="dim">Esta página não contém nenhum dado de paciente — só estados e contadores genéricos.</p>`;
+}
+document.querySelectorAll('.node,.chip').forEach(g=>{
+  const act=()=>{ stopJourney(); showNode(g.dataset.id); };
+  g.addEventListener('click',act);
+  g.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();act();} });
+});
+// jornada
+let step=-1, timer=null;
+const btnJ=$('btnJourney'), btnN=$('btnNext'), btnS=$('btnStop'), caption=$('caption');
+function playStep(i){
+  step=i;
+  if(i>=JOURNEY.length){ stopJourney(); return; }
+  stage.classList.add('playing');
+  document.querySelectorAll('.lit').forEach(e=>e.classList.remove('lit'));
+  JOURNEY[i].n.forEach(id=>{ const e=document.querySelector(`.node[data-id="${id}"],.chip[data-id="${id}"]`); if(e) e.classList.add('lit'); });
+  JOURNEY[i].e.forEach(id=>{ const e=document.querySelector(`.edge[data-id="${id}"]`); if(e) e.classList.add('lit'); });
+  caption.innerHTML=`<span class="step-n">${i+1}/${JOURNEY.length}</span>${JOURNEY[i].t}`;
+  clearTimeout(timer); timer=setTimeout(()=>playStep(i+1),4200);
+}
+function stopJourney(){
+  clearTimeout(timer); step=-1;
+  stage.classList.remove('playing');
+  document.querySelectorAll('.lit').forEach(e=>e.classList.remove('lit'));
+  btnJ.hidden=false; btnN.hidden=true; btnS.hidden=true;
+}
+btnJ.addEventListener('click',()=>{ btnJ.hidden=true; btnN.hidden=false; btnS.hidden=false; playStep(0); });
+btnN.addEventListener('click',()=>playStep(step+1));
+btnS.addEventListener('click',stopJourney);
+overview();
+</script>
+</body>
+</html>
