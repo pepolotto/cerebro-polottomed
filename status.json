@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-13T10:00:00.000Z",
+ "gerado_em": "2026-10-13T10:05:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T10:04:00.000Z",
-   "detalhe": "HTTP 200 · 145 ms"
+   "ultimo_sinal": "2026-10-13T10:05:00.000Z",
+   "detalhe": "HTTP 200 · 137 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T10:04:00.000Z",
+   "ultimo_sinal": "2026-10-13T10:05:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T10:04:00.000Z",
+   "ultimo_sinal": "2026-10-13T10:05:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-10-13T10:04:00.000Z",
+   "ultimo_sinal": "2026-10-13T10:05:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -68,7 +68,7 @@
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "216 published · 23 rejected · 64 pending · 3 failed · 8 approved · 52 aguardando há mais de 7 dias",
+   "detalhe": "216 published · 23 rejected · 64 pending · 3 failed · 8 approved · 54 aguardando há mais de 7 dias",
    "processo": "online",
    "conteudos": {
     "published": 216,
@@ -76,7 +76,7 @@
     "pending": 64,
     "failed": 3,
     "approved": 8,
-    "pendentes_antigos": 52
+    "pendentes_antigos": 54
    }
   },
   "analytics": {
@@ -91,7 +91,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T10:04:00.000Z",
+   "ultimo_sinal": "2026-10-13T10:05:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -116,8 +116,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T10:04:00.000Z",
-   "ultima_publicacao": "2026-10-13T10:03:00.000Z",
+   "ultimo_sinal": "2026-10-13T10:05:00.000Z",
+   "ultima_publicacao": "2026-10-13T10:05:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
