@@ -82,6 +82,8 @@ footer{color:var(--faint); font-size:12.5px; font-family:Consolas,monospace; tex
 .chip rect{fill:var(--surface2); stroke:var(--line); stroke-width:1.2}
 .chip:hover rect{stroke:var(--syn)}
 .chip.selected rect{stroke:var(--syn); stroke-width:2}
+.chip.est-ok rect{stroke:var(--ok)}
+.chip.est-bad rect{stroke:var(--bad)}
 .chip text{font-family:Consolas,monospace; font-size:12.5px; fill:var(--fg); text-anchor:middle; pointer-events:none}
 .stage.playing .edge,.stage.playing .node,.stage.playing .chip,.stage.playing .gyri{opacity:.10}
 .stage.playing .edge.lit{opacity:1; stroke-width:3; stroke:var(--syn2); stroke-dasharray:6 8; animation:flow .7s linear infinite}
@@ -152,6 +154,7 @@ const EXT = {
   feegow:{x:640,y:715,name:'Feegow',region:'Sistema vital',desc:'Agenda, pacientes e prontuário — a fonte da verdade clínica.'},
   gagenda:{x:810,y:715,name:'Google Agenda',region:'Relógio',desc:'Fonte das vagas do Urofill.'},
   metaads:{x:115,y:235,name:'Meta Ads',region:'Captação',desc:'Campanhas pagas monitoradas pelo Theo (somente leitura).'},
+  site:{x:615,y:55,name:'Site',region:'Vitrine — drpedropaulo.com',desc:'Landing do preenchimento peniano; o CTA leva ao WhatsApp da Estela com a frase "vim pelo site", que marca a origem do lead no funil. Status verificado ao vivo pelo Sinapse.'},
   instagram:{x:110,y:420,name:'Instagram',region:'Expressão',desc:'@dr.pedro.paulo — publicação do Arthur e coleta de concorrentes do Theo.'},
   telegram:{x:1005,y:655,name:'Telegram',region:'Nervo direto',desc:'Canal de comando: relatórios do Theo, aprovações do Arthur, modo engenheiro.'},
   medico:{x:1120,y:560,name:'Dr. Pedro',region:'Consciência',desc:'A decisão final: aprova artes, confirma mudanças de código, informa valores ao funil.'},
@@ -166,7 +169,8 @@ const EDGES = [
   {id:'e5', a:'estela', b:'gagenda', st:'on', c:[770,590], label:'Vagas Urofill'},
   {id:'e6', a:'estela', b:'theo', st:'on', bi:true, c:[790,420], label:'Funil noturno + perguntas do Theo (ponte dupla)'},
   {id:'e7', a:'theo', b:'metaads', st:'on', bi:true, c:[480,95], label:'Métricas de campanha (leitura)'},
-  {id:'e8', a:'metaads', b:'wa', st:'on', c:[615,25], label:'Anúncios geram conversas'},
+  {id:'e8', a:'metaads', b:'site', st:'on', c:[300,60], label:'Anúncios levam ao site'},
+  {id:'e8b', a:'site', b:'wa', st:'on', c:[950,80], label:'"vim pelo site" → WhatsApp (origem marcada no funil)'},
   {id:'e9', a:'theo', b:'arthur', st:'slow', c:[600,300], label:'Encomenda de peças e briefs'},
   {id:'e10', a:'arthur', b:'instagram', st:'on', c:[210,370], label:'Publicação de posts e stories'},
   {id:'e11', a:'instagram', b:'theo', st:'slow', c:[430,140], label:'Coleta semanal de concorrentes'},
@@ -183,7 +187,7 @@ const EDGES = [
 ];
 const JOURNEY = [
   {n:['theo','metaads'], e:['e7'], t:'Theo acompanha as campanhas do Meta Ads todos os dias.'},
-  {n:['metaads','wa'], e:['e8'], t:'Um paciente vê o anúncio e chama no WhatsApp.'},
+  {n:['metaads','site','wa'], e:['e8','e8b'], t:'Um paciente vê o anúncio, visita o site e chama no WhatsApp — a origem fica marcada no funil.'},
   {n:['wa','estela'], e:['e1'], t:'Estela acolhe, qualifica e responde em segundos.'},
   {n:['estela','gagenda','feegow'], e:['e5','e4'], t:'Ela consulta as vagas e agenda direto no Feegow.'},
   {n:['theo','estela','ajudante','feegow'], e:['e6','e2','e3'], t:'Theo pergunta à Estela quem compareceu; o Ajudante confere no prontuário.'},
@@ -279,6 +283,8 @@ function aplicar(d){
     cont.atencao?`<span class="count"><span class="dot" style="background:var(--bad)"></span>${cont.atencao} sem sinal</span>`:'',
     `<span class="count"><span class="dot" style="background:var(--off)"></span>${cont.parado} parados</span>`,
   ].join('');
+  const st=(d.agentes||{}).site, ch=document.querySelector('.chip[data-id="site"]');
+  if(ch&&st){ ch.classList.toggle('est-ok', st.estado==='ativo'); ch.classList.toggle('est-bad', st.estado!=='ativo'); }
   const idade=(Date.now()-Date.parse(d.gerado_em||0))/60000;
   const b=$('liveBadge');
   if(idade<12){ b.textContent='● ao vivo · coleta '+idadeTxt(d.gerado_em); b.className='on'; }
