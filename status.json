@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-13T20:35:00.000Z",
+ "gerado_em": "2026-10-13T20:40:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T20:39:00.000Z",
-   "detalhe": "HTTP 200 · 125 ms"
+   "ultimo_sinal": "2026-10-13T20:40:00.000Z",
+   "detalhe": "HTTP 200 · 123 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T20:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T20:40:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T20:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T20:40:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,16 +52,16 @@
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T20:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T20:40:00.000Z",
    "operacional": {
-    "pendentes": 3,
+    "pendentes": 7,
     "em_execucao": 1,
     "concluidas": 84,
     "falhas": 0,
     "falhas_consecutivas": 0,
     "revisao": 0,
-    "espera_max_ms": 0,
-    "execucao_max_ms": 0,
+    "espera_max_ms": 60000,
+    "execucao_max_ms": 60000,
     "ultima_conclusao": "2026-10-13T17:44:00.000Z",
     "ultima_falha": null,
     "ultima_duracao_ms": 39,
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T20:40:00.000Z",
+   "ultimo_sinal": "2026-10-13T20:41:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -115,8 +115,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T20:40:00.000Z",
-   "ultima_publicacao": "2026-10-13T20:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T20:41:00.000Z",
+   "ultima_publicacao": "2026-10-13T20:40:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
