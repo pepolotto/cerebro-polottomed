@@ -155,7 +155,8 @@ const EXT = {
   instagram:{x:110,y:420,name:'Instagram',region:'Expressão',desc:'@dr.pedro.paulo — publicação do Arthur e coleta de concorrentes do Theo.'},
   telegram:{x:1005,y:655,name:'Telegram',region:'Nervo direto',desc:'Canal de comando: relatórios do Theo, aprovações do Arthur, modo engenheiro.'},
   medico:{x:1120,y:560,name:'Dr. Pedro',region:'Consciência',desc:'A decisão final: aprova artes, confirma mudanças de código, informa valores ao funil.'},
-  youtube:{x:125,y:580,name:'YouTube',region:'Voz longa',desc:'Destino futuro dos vídeos do EDITOR.'}
+  youtube:{x:125,y:580,name:'YouTube',region:'Voz longa',desc:'Upload direto pelo Arthur (como privado, até o app ser verificado) — "publica no youtube" no Telegram dele.'},
+  tiktok:{x:175,y:685,name:'TikTok',region:'Voz curta',desc:'Rascunho na conta via Content Posting API (quando o app for criado) ou pacote pronto no chat — parte do "publicar em tudo" do Arthur.'}
 };
 const EDGES = [
   {id:'e1', a:'wa', b:'estela', st:'fast', bi:true, c:[900,500], label:'Conversas de leads e pacientes, 24/7'},
@@ -174,7 +175,8 @@ const EDGES = [
   {id:'e14', a:'telegram', b:'medico', st:'on', c:[1075,600], label:'Você aprova e decide'},
   {id:'e15', a:'medico', b:'wa', st:'on', c:[1165,488], label:'Comandos no número pessoal'},
   {id:'e16', a:'theo', b:'analytics', st:'on', c:[700,230], label:'consultar_analytics: dados do consultório'},
-  {id:'e17', a:'editor', b:'youtube', st:'off', c:[260,610], label:'Publicação de vídeo (pendente de chaves)'},
+  {id:'e17', a:'arthur', b:'youtube', st:'on', c:[215,480], label:'Upload direto (privado) — "publica no youtube"'},
+  {id:'e22', a:'arthur', b:'tiktok', st:'manual', c:[230,560], label:'Rascunho/pacote TikTok — "publicar em tudo"'},
   {id:'e18', a:'arthur', b:'editor', st:'on', c:[345,470], label:'Edição de vídeo sob demanda'},
   {id:'e19', a:'analytics', b:'feegow', st:'manual', c:[470,470], label:'API do Feegow'},
   {id:'e20', a:'theo', b:'ajudante', st:'slow', c:[700,330], label:'acionar_ajudante (via Estela)'}
