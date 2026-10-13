@@ -154,7 +154,7 @@ const EXT = {
   feegow:{x:640,y:715,name:'Feegow',region:'Sistema vital',desc:'Agenda, pacientes e prontuário — a fonte da verdade clínica.'},
   gagenda:{x:810,y:715,name:'Google Agenda',region:'Relógio',desc:'Fonte das vagas do Urofill.'},
   metaads:{x:115,y:235,name:'Meta Ads',region:'Captação',desc:'Campanhas pagas monitoradas pelo Theo (somente leitura).'},
-  site:{x:615,y:55,name:'Site',region:'Vitrine — drpedropaulo.com',desc:'Landing do preenchimento peniano; o CTA leva ao WhatsApp da Estela com a frase "vim pelo site", que marca a origem do lead no funil. Status verificado ao vivo pelo Sinapse.'},
+  site:{x:615,y:55,name:'Site',region:'Vitrine — drpedropaulo.com',desc:'Landing do preenchimento peniano; o CTA leva ao WhatsApp da Estela ("vim pelo site" marca a origem no funil). SEO, schema e rodapé CRM/RQE corrigidos em 13/10; o Arthur publica artigos no /blog com sua aprovação. Uptime verificado ao vivo pelo Sinapse.'},
   instagram:{x:110,y:420,name:'Instagram',region:'Expressão',desc:'@dr.pedro.paulo — publicação do Arthur e coleta de concorrentes do Theo.'},
   telegram:{x:1005,y:655,name:'Telegram',region:'Nervo direto',desc:'Canal de comando: relatórios do Theo, aprovações do Arthur, modo engenheiro.'},
   medico:{x:1120,y:560,name:'Dr. Pedro',region:'Consciência',desc:'A decisão final: aprova artes, confirma mudanças de código, informa valores ao funil.'},
@@ -181,6 +181,7 @@ const EDGES = [
   {id:'e16', a:'theo', b:'analytics', st:'on', c:[700,230], label:'consultar_analytics: dados do consultório'},
   {id:'e17', a:'arthur', b:'youtube', st:'on', c:[215,480], label:'Upload direto (privado) — "publica no youtube"'},
   {id:'e22', a:'arthur', b:'tiktok', st:'manual', c:[230,560], label:'Rascunho/pacote TikTok — "publicar em tudo"'},
+  {id:'e23', a:'arthur', b:'site', st:'slow', c:[500,150], label:'Artigos no /blog (rascunho → sua aprovação)'},
   {id:'e18', a:'arthur', b:'editor', st:'on', c:[345,470], label:'Edição de vídeo sob demanda'},
   {id:'e19', a:'analytics', b:'feegow', st:'manual', c:[470,470], label:'API do Feegow'},
   {id:'e20', a:'theo', b:'ajudante', st:'slow', c:[700,330], label:'acionar_ajudante (via Estela)'}
