@@ -1,20 +1,50 @@
 {
- "gerado_em": "2026-10-13T03:25:00.000Z",
+ "gerado_em": "2026-10-13T03:30:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:29:00.000Z",
-   "detalhe": "HTTP 200 · 139 ms"
+   "ultimo_sinal": "2026-10-13T03:30:00.000Z",
+   "detalhe": "HTTP 200 · 122 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:29:00.000Z",
-   "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
+   "ultimo_sinal": "2026-10-13T03:30:00.000Z",
+   "operacional": {
+    "pendentes": 0,
+    "em_execucao": 0,
+    "concluidas": 0,
+    "falhas": 0,
+    "falhas_consecutivas": 0,
+    "revisao": 0,
+    "espera_max_ms": 0,
+    "execucao_max_ms": 0,
+    "ultima_conclusao": null,
+    "ultima_falha": null,
+    "ultima_duracao_ms": 0,
+    "fora_do_prazo": 0,
+    "recuperacao_pendente": 0
+   },
+   "detalhe": "0 na fila · 0 em execução"
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:29:00.000Z",
-   "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
+   "ultimo_sinal": "2026-10-13T03:30:00.000Z",
+   "operacional": {
+    "pendentes": 0,
+    "em_execucao": 0,
+    "concluidas": 0,
+    "falhas": 0,
+    "falhas_consecutivas": 0,
+    "revisao": 0,
+    "espera_max_ms": 0,
+    "execucao_max_ms": 0,
+    "ultima_conclusao": null,
+    "ultima_falha": null,
+    "ultima_duracao_ms": 0,
+    "fora_do_prazo": 0,
+    "recuperacao_pendente": 0
+   },
+   "detalhe": "0 na fila · 0 em execução"
   },
   "ajudante": {
    "estado": "sob_demanda",
@@ -22,7 +52,7 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-10-13T03:29:00.000Z",
+   "ultimo_sinal": "2026-10-13T03:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -69,8 +99,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:29:00.000Z",
-   "ultima_publicacao": "2026-10-13T03:28:00.000Z",
+   "ultimo_sinal": "2026-10-13T03:30:00.000Z",
+   "ultima_publicacao": "2026-10-13T03:29:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
