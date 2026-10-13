@@ -31,6 +31,11 @@ h1 small{font-weight:500; color:var(--muted); font-size:.55em; letter-spacing:.8
 #liveBadge.on{border-color:var(--ok); color:var(--ok)}
 #liveBadge.stale{border-color:var(--bad); color:var(--bad)}
 .counts{display:flex; gap:8px; flex-wrap:wrap}
+.control-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;background:linear-gradient(110deg,#1c2647,#182138);border:1px solid #4c5b91;border-radius:14px;padding:15px 18px}
+.control-bar strong{display:block;font-size:16px}.control-bar small{color:var(--muted)}
+.control-link{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 18px;background:var(--syn2);color:#12162a;border-radius:10px;font-weight:700;text-decoration:none}
+.control-link:hover{background:#ded6ff}.control-link:focus-visible{outline:3px solid var(--ok);outline-offset:3px}.control-link[hidden]{display:none}
+#controlUnavailable{font-size:13px;color:var(--muted)}
 .count{font-family:Consolas,monospace; font-size:12px; padding:4px 10px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--muted); white-space:nowrap}
 .count .dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:1px}
 main{display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:14px; align-items:start}
@@ -100,6 +105,11 @@ footer{color:var(--faint); font-size:12.5px; font-family:Consolas,monospace; tex
     <h1>Cérebro POLOTTOMED <small>ao vivo</small></h1>
     <span id="liveBadge">conectando…</span>
   </header>
+  <div class="control-bar">
+    <div><strong>Seu centro de comando</strong><small>Converse com os agentes, aprove conteúdos e acompanhe pendências.</small></div>
+    <a class="control-link" id="controlLink" hidden target="_blank" rel="noopener noreferrer">Abrir painel de controle →</a>
+    <span id="controlUnavailable">Acesso privado aguardando conexão.</span>
+  </div>
   <div class="counts" id="counts"></div>
   <main>
     <div class="stage" id="stage">
@@ -121,7 +131,7 @@ footer{color:var(--faint); font-size:12.5px; font-family:Consolas,monospace; tex
       <div class="legend">
         <span><span class="dot" style="background:var(--ok)"></span>ativo agora</span>
         <span><span class="dot" style="background:var(--standby)"></span>manual / sob demanda</span>
-        <span><span class="dot" style="background:var(--bad)"></span>sem sinal (atenção)</span>
+        <span><span class="dot" style="background:var(--bad)"></span>atenção necessária</span>
         <span><span class="dot" style="background:var(--off)"></span>parado</span>
       </div>
       <div class="journey-bar">
@@ -199,7 +209,7 @@ const JOURNEY = [
   {n:['arthur','instagram'], e:['e10'], t:'Aprovado, vai ao ar no @dr.pedro.paulo — e o ciclo recomeça.'}
 ];
 const CLASSE = { ativo:'s-ok', manual:'s-standby', sob_demanda:'s-standby', atencao:'s-bad', parado:'s-off' };
-const ROTULO = { ativo:'ativo', manual:'manual', sob_demanda:'sob demanda', atencao:'SEM SINAL', parado:'parado' };
+const ROTULO = { ativo:'ativo', manual:'manual', sob_demanda:'sob demanda', atencao:'ATENÇÃO', parado:'parado' };
 const svgNS='http://www.w3.org/2000/svg';
 const $=id=>document.getElementById(id);
 const edgeLayer=$('edgeLayer'), pulseLayer=$('pulseLayer'), nodeLayer=$('nodeLayer'), chipLayer=$('chipLayer'), panel=$('panel'), stage=$('stage');
@@ -270,6 +280,14 @@ function idadeTxt(iso){
 }
 function aplicar(d){
   DADOS=d;
+  let controlUrl = null;
+  try {
+    const url = new URL(d.controle_url);
+    if (url.protocol === 'https:' && !url.username && !url.password && !url.search && !url.hash && url.pathname === '/') controlUrl = url.href;
+  } catch {}
+  $('controlLink').hidden = !controlUrl;
+  $('controlUnavailable').hidden = !!controlUrl;
+  if (controlUrl) $('controlLink').href = controlUrl; else $('controlLink').removeAttribute('href');
   const cont={ativo:0,manual:0,atencao:0,parado:0};
   for(const id in NODES){
     const a=(d.agentes||{})[id]||{};
@@ -281,7 +299,7 @@ function aplicar(d){
   $('counts').innerHTML=[
     `<span class="count"><span class="dot" style="background:var(--ok)"></span>${cont.ativo} ativos</span>`,
     `<span class="count"><span class="dot" style="background:var(--standby)"></span>${cont.manual} manuais</span>`,
-    cont.atencao?`<span class="count"><span class="dot" style="background:var(--bad)"></span>${cont.atencao} sem sinal</span>`:'',
+    cont.atencao?`<span class="count"><span class="dot" style="background:var(--bad)"></span>${cont.atencao} precisam de atenção</span>`:'',
     `<span class="count"><span class="dot" style="background:var(--off)"></span>${cont.parado} parados</span>`,
   ].join('');
   const st=(d.agentes||{}).site, ch=document.querySelector('.chip[data-id="site"]');
@@ -302,14 +320,15 @@ async function atualizar(){
 }
 atualizar(); setInterval(atualizar,60000);
 // painel lateral
+const escapeText = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 function showNode(id){
   const n=NODES[id]||EXT[id]; const a=DADOS&&DADOS.agentes&&DADOS.agentes[id];
   const est=a?(a.estado||'parado'):null;
   const cor=est?{ 'ativo':'var(--ok)','manual':'var(--standby)','sob_demanda':'var(--standby)','atencao':'var(--bad)','parado':'var(--off)' }[est]:'var(--syn)';
   panel.innerHTML=`<h2>${n.name}</h2><div class="region">${n.region}</div>`+
-    (est?`<span class="status-line"><span class="dot" style="background:${cor}"></span>${ROTULO[est]||est} · ${idadeTxt(a.ultimo_sinal)||'sem sinal'}</span>`:'')+
+    (est?`<span class="status-line"><span class="dot" style="background:${cor}"></span>${escapeText(ROTULO[est]||'desconhecido')} · ${idadeTxt(a.ultimo_sinal)||'sem sinal'}</span>`:'')+
     `<p>${n.desc}</p>`+
-    (a&&a.detalhe?`<p class="dim">${a.detalhe}</p>`:'');
+    (a&&a.detalhe?`<p class="dim">${escapeText(a.detalhe)}</p>`:'');
   document.querySelectorAll('.selected').forEach(e=>e.classList.remove('selected'));
   const e=document.querySelector(`[data-id="${id}"]`); if(e) e.classList.add('selected');
 }
