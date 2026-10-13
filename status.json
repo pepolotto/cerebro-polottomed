@@ -3,16 +3,16 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T02:53:00.000Z",
-   "detalhe": "HTTP 200 · 114 ms"
+   "ultimo_sinal": "2026-10-13T02:54:00.000Z",
+   "detalhe": "HTTP 200 · 541 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T02:53:00.000Z"
+   "ultimo_sinal": "2026-10-13T02:54:00.000Z"
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T02:53:00.000Z"
+   "ultimo_sinal": "2026-10-13T02:54:00.000Z"
   },
   "ajudante": {
    "estado": "sob_demanda",
@@ -20,7 +20,7 @@
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T02:53:00.000Z",
+   "ultimo_sinal": "2026-10-13T02:54:00.000Z",
    "detalhe": "216 published · 21 rejected · 63 pending · 6 failed · 4 approved"
   },
   "analytics": {
@@ -43,7 +43,7 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T02:53:00.000Z"
+   "ultimo_sinal": "2026-10-13T02:54:00.000Z"
   }
  }
 }
