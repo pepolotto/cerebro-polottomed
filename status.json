@@ -4,7 +4,7 @@
   "site": {
    "estado": "ativo",
    "ultimo_sinal": "2026-10-13T03:37:00.000Z",
-   "detalhe": "HTTP 200 · 120 ms"
+   "detalhe": "HTTP 200 · 147 ms"
   },
   "theo": {
    "estado": "ativo",
@@ -85,12 +85,29 @@
    "detalhe": "exportador sob demanda do Theo"
   },
   "editor": {
-   "estado": "parado",
-   "ultimo_sinal": "2026-08-09T13:54:00.000Z"
+   "estado": "sob_demanda",
+   "ultimo_sinal": "2026-08-09T13:54:00.000Z",
+   "detalhe": "Edição sob demanda pelo Arthur ou painel."
   },
   "agnes": {
-   "estado": "parado",
-   "ultimo_sinal": "2026-09-22T20:54:00.000Z"
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-13T03:37:00.000Z",
+   "operacional": {
+    "pendentes": 0,
+    "em_execucao": 0,
+    "concluidas": 1,
+    "falhas": 0,
+    "falhas_consecutivas": 0,
+    "revisao": 0,
+    "espera_max_ms": 0,
+    "execucao_max_ms": 0,
+    "ultima_conclusao": "2026-10-13T03:37:00.000Z",
+    "ultima_falha": null,
+    "ultima_duracao_ms": 34,
+    "fora_do_prazo": 0,
+    "recuperacao_pendente": 0
+   },
+   "detalhe": "0 na fila · 0 em execução"
   },
   "boletim": {
    "estado": "manual",
@@ -100,7 +117,7 @@
   "sinapse": {
    "estado": "ativo",
    "ultimo_sinal": "2026-10-13T03:37:00.000Z",
-   "ultima_publicacao": "2026-10-13T03:36:00.000Z",
+   "ultima_publicacao": null,
    "detalhe": "Coleta operacional ativa."
   }
  },
