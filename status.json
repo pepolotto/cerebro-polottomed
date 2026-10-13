@@ -1,27 +1,53 @@
 {
- "gerado_em": "2026-10-13T03:20:00.000Z",
+ "gerado_em": "2026-10-13T03:25:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:24:00.000Z",
-   "detalhe": "HTTP 200 · 201 ms"
+   "ultimo_sinal": "2026-10-13T03:25:00.000Z",
+   "detalhe": "HTTP 200 · 186 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:24:00.000Z"
+   "ultimo_sinal": "2026-10-13T03:25:00.000Z",
+   "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:24:00.000Z"
+   "ultimo_sinal": "2026-10-13T03:25:00.000Z",
+   "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "ajudante": {
    "estado": "sob_demanda",
    "ultimo_sinal": "2026-10-12T22:51:00.000Z"
   },
   "arthur": {
-   "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:24:00.000Z",
-   "detalhe": "216 published · 21 rejected · 63 pending · 6 failed · 4 approved"
+   "estado": "atencao",
+   "ultimo_sinal": "2026-10-13T03:25:00.000Z",
+   "operacional": {
+    "pendentes": 0,
+    "em_execucao": 0,
+    "concluidas": 0,
+    "falhas": 0,
+    "falhas_consecutivas": 0,
+    "revisao": 0,
+    "espera_max_ms": 0,
+    "execucao_max_ms": 0,
+    "ultima_conclusao": null,
+    "ultima_falha": null,
+    "ultima_duracao_ms": 0,
+    "fora_do_prazo": 0,
+    "recuperacao_pendente": 0
+   },
+   "detalhe": "216 published · 21 rejected · 63 pending · 6 failed · 4 approved · 51 aguardando há mais de 7 dias",
+   "processo": "online",
+   "conteudos": {
+    "published": 216,
+    "rejected": 21,
+    "pending": 63,
+    "failed": 6,
+    "approved": 4,
+    "pendentes_antigos": 51
+   }
   },
   "analytics": {
    "estado": "manual",
@@ -43,7 +69,10 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T03:24:00.000Z"
+   "ultimo_sinal": "2026-10-13T03:25:00.000Z",
+   "ultima_publicacao": null,
+   "detalhe": "Coleta operacional ativa."
   }
- }
+ },
+ "controle_url": "https://approx-contracting-obtaining-mod.trycloudflare.com/"
 }
