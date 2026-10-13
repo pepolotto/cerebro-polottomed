@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-13T15:35:00.000Z",
+ "gerado_em": "2026-10-13T15:40:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T15:39:00.000Z",
-   "detalhe": "HTTP 200 · 110 ms"
+   "ultimo_sinal": "2026-10-13T15:40:00.000Z",
+   "detalhe": "HTTP 200 · 143 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T15:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T15:40:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,19 +28,19 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T15:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T15:40:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
-    "concluidas": 6,
+    "concluidas": 9,
     "falhas": 0,
     "falhas_consecutivas": 0,
     "revisao": 0,
     "espera_max_ms": 0,
     "execucao_max_ms": 0,
-    "ultima_conclusao": "2026-10-13T12:49:00.000Z",
+    "ultima_conclusao": "2026-10-13T15:40:00.000Z",
     "ultima_falha": null,
-    "ultima_duracao_ms": 19,
+    "ultima_duracao_ms": 26,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
@@ -52,29 +52,29 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-10-13T15:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T15:40:00.000Z",
    "operacional": {
-    "pendentes": 1,
-    "em_execucao": 1,
-    "concluidas": 72,
+    "pendentes": 0,
+    "em_execucao": 0,
+    "concluidas": 75,
     "falhas": 0,
     "falhas_consecutivas": 0,
     "revisao": 0,
     "espera_max_ms": 0,
     "execucao_max_ms": 0,
-    "ultima_conclusao": "2026-10-13T15:39:00.000Z",
+    "ultima_conclusao": "2026-10-13T15:40:00.000Z",
     "ultima_falha": null,
-    "ultima_duracao_ms": 22,
+    "ultima_duracao_ms": 45528,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "219 published · 52 rejected · 35 approved · 8 pending · 2 aguardando há mais de 7 dias",
+   "detalhe": "219 published · 52 rejected · 36 approved · 7 pending · 2 aguardando há mais de 7 dias",
    "processo": "online",
    "conteudos": {
     "published": 219,
     "rejected": 52,
-    "approved": 35,
-    "pending": 8,
+    "approved": 36,
+    "pending": 7,
     "pendentes_antigos": 2
    }
   },
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-13T15:39:00.000Z",
+   "ultimo_sinal": "2026-10-13T15:40:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -116,7 +116,7 @@
   "sinapse": {
    "estado": "ativo",
    "ultimo_sinal": "2026-10-13T15:40:00.000Z",
-   "ultima_publicacao": "2026-10-13T15:39:00.000Z",
+   "ultima_publicacao": "2026-10-13T15:40:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
