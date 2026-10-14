@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T10:48:00.000Z",
-   "detalhe": "HTTP 200 · 353 ms"
+   "ultimo_sinal": "2026-10-14T10:49:00.000Z",
+   "detalhe": "HTTP 200 · 660 ms"
   },
   "theo": {
-   "estado": "parado",
-   "ultimo_sinal": "2026-10-14T04:29:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-14T10:49:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -27,8 +27,8 @@
    "detalhe": "0 na fila · 0 em execução"
   },
   "estela": {
-   "estado": "parado",
-   "ultimo_sinal": "2026-10-14T04:29:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-14T10:49:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T10:48:00.000Z",
+   "ultimo_sinal": "2026-10-14T10:49:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -89,7 +89,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T10:48:00.000Z",
+   "ultimo_sinal": "2026-10-14T10:49:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -114,8 +114,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T10:48:00.000Z",
-   "ultima_publicacao": "2026-10-14T10:47:00.000Z",
+   "ultimo_sinal": "2026-10-14T10:49:00.000Z",
+   "ultima_publicacao": "2026-10-14T10:48:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
