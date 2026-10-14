@@ -3,8 +3,8 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T03:38:00.000Z",
-   "detalhe": "HTTP 200 · 157 ms"
+   "ultimo_sinal": "2026-10-14T03:39:00.000Z",
+   "detalhe": "HTTP 200 · 114 ms"
   },
   "theo": {
    "estado": "ativo",
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T03:37:00.000Z",
+   "ultimo_sinal": "2026-10-14T03:38:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -89,7 +89,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T03:38:00.000Z",
+   "ultimo_sinal": "2026-10-14T03:39:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -114,8 +114,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-14T03:38:00.000Z",
-   "ultima_publicacao": "2026-10-14T03:37:00.000Z",
+   "ultimo_sinal": "2026-10-14T03:39:00.000Z",
+   "ultima_publicacao": "2026-10-14T03:38:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
