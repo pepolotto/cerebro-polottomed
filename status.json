@@ -2,9 +2,9 @@
  "gerado_em": "2026-10-15T09:50:00.000Z",
  "agentes": {
   "site": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-10-15T09:50:00.000Z",
-   "detalhe": "site não respondeu em 10 s"
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-15T09:51:00.000Z",
+   "detalhe": "HTTP 200 · 225 ms"
   },
   "theo": {
    "estado": "ativo",
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-15T09:50:00.000Z",
+   "ultimo_sinal": "2026-10-15T09:51:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-15T09:50:00.000Z",
+   "ultimo_sinal": "2026-10-15T09:51:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -114,10 +114,10 @@
    "detalhe": "protótipo — geração manual"
   },
   "sinapse": {
-   "estado": "ativo",
-   "ultimo_sinal": "2026-10-15T09:50:00.000Z",
+   "estado": "atencao",
+   "ultimo_sinal": "2026-10-15T09:51:00.000Z",
    "ultima_publicacao": "2026-10-15T09:49:00.000Z",
-   "detalhe": "Coleta operacional ativa."
+   "detalhe": "Publicação anterior falhou; nova tentativa automática."
   }
  },
  "controle_url": "https://prescribed-revolutionary-boxing-munich.trycloudflare.com/"
