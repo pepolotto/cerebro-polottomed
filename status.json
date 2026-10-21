@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-21T12:30:00.000Z",
+ "gerado_em": "2026-10-21T14:00:00.000Z",
  "agentes": {
   "site": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-10-21T12:32:00.000Z",
-   "detalhe": "site não respondeu em 10 s"
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-21T14:03:00.000Z",
+   "detalhe": "HTTP 200 · 551 ms"
   },
   "theo": {
-   "estado": "ativo",
-   "ultimo_sinal": "2026-10-21T12:32:00.000Z",
+   "estado": "parado",
+   "ultimo_sinal": "2026-10-21T12:33:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -27,8 +27,8 @@
    "detalhe": "0 na fila · 0 em execução"
   },
   "estela": {
-   "estado": "ativo",
-   "ultimo_sinal": "2026-10-21T12:32:00.000Z",
+   "estado": "parado",
+   "ultimo_sinal": "2026-10-21T12:33:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-21T12:32:00.000Z",
+   "ultimo_sinal": "2026-10-21T14:03:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-21T12:32:00.000Z",
+   "ultimo_sinal": "2026-10-21T14:03:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -114,11 +114,10 @@
    "detalhe": "protótipo — geração manual"
   },
   "sinapse": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-10-21T12:32:00.000Z",
-   "ultima_publicacao": "2026-10-21T12:26:00.000Z",
-   "detalhe": "Publicação anterior falhou; nova tentativa automática."
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-21T14:04:00.000Z",
+   "ultima_publicacao": null,
+   "detalhe": "Coleta operacional ativa."
   }
- },
- "controle_url": "https://propecia-chris-critics-opponents.trycloudflare.com/"
+ }
 }
