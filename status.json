@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-22T15:25:00.000Z",
+ "gerado_em": "2026-10-22T15:30:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-22T15:29:00.000Z",
-   "detalhe": "HTTP 200 · 127 ms"
+   "ultimo_sinal": "2026-10-22T15:30:00.000Z",
+   "detalhe": "HTTP 200 · 138 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-22T15:29:00.000Z",
+   "ultimo_sinal": "2026-10-22T15:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-22T15:29:00.000Z",
+   "ultimo_sinal": "2026-10-22T15:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-10-22T15:29:00.000Z",
+   "ultimo_sinal": "2026-10-22T15:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -68,13 +68,14 @@
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "248 published · 57 rejected · 24 approved · 15 pending · 5 aguardando há mais de 7 dias",
+   "detalhe": "248 published · 57 rejected · 23 approved · 15 pending · 1 publishing · 5 aguardando há mais de 7 dias",
    "processo": "online",
    "conteudos": {
     "published": 248,
     "rejected": 57,
-    "approved": 24,
+    "approved": 23,
     "pending": 15,
+    "publishing": 1,
     "pendentes_antigos": 5
    }
   },
@@ -90,7 +91,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-22T15:29:00.000Z",
+   "ultimo_sinal": "2026-10-22T15:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -115,8 +116,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-22T15:29:00.000Z",
-   "ultima_publicacao": "2026-10-22T15:28:00.000Z",
+   "ultimo_sinal": "2026-10-22T15:30:00.000Z",
+   "ultima_publicacao": "2026-10-22T15:29:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
