@@ -4,7 +4,7 @@
   "site": {
    "estado": "ativo",
    "ultimo_sinal": "2026-10-23T20:28:00.000Z",
-   "detalhe": "HTTP 200 · 152 ms"
+   "detalhe": "HTTP 200 · 176 ms"
   },
   "theo": {
    "estado": "ativo",
@@ -108,6 +108,11 @@
    },
    "detalhe": "0 na fila · 0 em execução"
   },
+  "dalton": {
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-23T20:28:00.000Z",
+   "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
+  },
   "boletim": {
    "estado": "manual",
    "ultimo_sinal": null,
@@ -116,7 +121,7 @@
   "sinapse": {
    "estado": "ativo",
    "ultimo_sinal": "2026-10-23T20:28:00.000Z",
-   "ultima_publicacao": "2026-10-23T20:27:00.000Z",
+   "ultima_publicacao": null,
    "detalhe": "Coleta operacional ativa."
   }
  },
