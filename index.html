@@ -154,6 +154,7 @@ const NODES = {
   theo:{x:845,y:295,r:21,name:'Theo',sub:'decisão',region:'Córtex pré-frontal — decisão',desc:'Gestor de tráfego e coordenador dos relatórios: Meta Ads, funil real, concorrentes, analytics do consultório e direção de conteúdo. Fala com o médico pelo Telegram.'},
   arthur:{x:355,y:345,r:21,name:'Arthur',sub:'criação visual',region:'Córtex occipital — visual',desc:'Criador de conteúdo do Instagram: carrosséis, stories e agora também a edição de vídeo (EDITOR), com aprovação do médico no Telegram.'},
   analytics:{x:575,y:215,r:18,name:'Analytics',sub:'análise',region:'Córtex parietal — análise',desc:'Dados reais do consultório (agendamentos, comparecimento, procedimentos, receita estimada), exportados sob demanda para o Theo.'},
+  dalton:{x:265,y:245,r:19,name:'Dalton',sub:'estratégia',region:'Área pré-motora — planeja antes de executar',desc:'Estrategista de conteúdo: decide pauta, formato, gancho e roteiro pelo método de crescimento orgânico, e audita tudo contra a CFM 2.336/2023 antes de ir ao ar. Ele pensa, o Arthur executa.'},
   boletim:{x:775,y:455,r:14,name:'Boletim',sub:'conhecimento',region:'Córtex temporal — conhecimento',desc:'App dos boletins científicos semanais (protótipo).'},
   editor:{x:400,y:565,r:15,name:'EDITOR',sub:'vídeo',region:'Cerebelo — coordenação fina',desc:'Pipeline de edição de vídeo (corte, 9:16, legendas, capas) — acionado pelo Arthur.'},
   agnes:{x:330,y:455,r:13,name:'Agnes',sub:'pessoal',region:'Occipital profundo',desc:'Geradora de imagens pessoal do doutor — fora do circuito comercial.'},
@@ -192,6 +193,9 @@ const EDGES = [
   {id:'e17', a:'arthur', b:'youtube', st:'on', c:[215,480], label:'Upload direto (privado) — "publica no youtube"'},
   {id:'e22', a:'arthur', b:'tiktok', st:'manual', c:[230,560], label:'Rascunho/pacote TikTok — "publicar em tudo"'},
   {id:'e23', a:'arthur', b:'site', st:'slow', c:[500,150], label:'Artigos no /blog (rascunho → sua aprovação)'},
+  {id:'e24', a:'dalton', b:'arthur', st:'on', bi:true, c:[300,300], label:'Roteiro, pauta e auditoria → Arthur produz'},
+  {id:'e25', a:'theo', b:'dalton', st:'slow', c:[560,120], label:'Direção de conteúdo embasada no método'},
+  {id:'e26', a:'estela', b:'dalton', st:'slow', c:[420,390], label:'Dúvidas reais dos leads viram pauta'},
   {id:'e18', a:'arthur', b:'editor', st:'on', c:[345,470], label:'Edição de vídeo sob demanda'},
   {id:'e19', a:'analytics', b:'feegow', st:'manual', c:[470,470], label:'API do Feegow'},
   {id:'e20', a:'theo', b:'ajudante', st:'slow', c:[700,330], label:'acionar_ajudante (via Estela)'}
