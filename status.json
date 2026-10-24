@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-24T01:20:00.000Z",
+ "gerado_em": "2026-10-24T01:25:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-24T01:24:00.000Z",
-   "detalhe": "HTTP 200 · 160 ms"
+   "ultimo_sinal": "2026-10-24T01:25:00.000Z",
+   "detalhe": "HTTP 200 · 141 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-24T01:24:00.000Z",
+   "ultimo_sinal": "2026-10-24T01:25:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,19 +28,19 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-24T01:24:00.000Z",
+   "ultimo_sinal": "2026-10-24T01:25:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
-    "concluidas": 17,
+    "concluidas": 18,
     "falhas": 0,
     "falhas_consecutivas": 0,
     "revisao": 0,
     "espera_max_ms": 0,
     "execucao_max_ms": 0,
-    "ultima_conclusao": "2026-10-15T02:52:00.000Z",
+    "ultima_conclusao": "2026-10-24T01:25:00.000Z",
     "ultima_falha": null,
-    "ultima_duracao_ms": 23,
+    "ultima_duracao_ms": 36,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
@@ -51,31 +51,30 @@
    "ultimo_sinal": "2026-10-23T16:44:00.000Z"
   },
   "arthur": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-10-24T01:24:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-10-24T01:25:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
-    "concluidas": 124,
+    "concluidas": 130,
     "falhas": 4,
     "falhas_consecutivas": 0,
     "revisao": 0,
     "espera_max_ms": 0,
     "execucao_max_ms": 0,
-    "ultima_conclusao": "2026-10-24T01:24:00.000Z",
+    "ultima_conclusao": "2026-10-24T01:25:00.000Z",
     "ultima_falha": "2026-10-18T14:03:00.000Z",
-    "ultima_duracao_ms": 44,
+    "ultima_duracao_ms": 52,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "253 published · 59 rejected · 29 approved · 6 pending · 4 aguardando há mais de 7 dias",
+   "detalhe": "253 published · 61 rejected · 33 approved",
    "processo": "online",
    "conteudos": {
     "published": 253,
-    "rejected": 59,
-    "approved": 29,
-    "pending": 6,
-    "pendentes_antigos": 4
+    "rejected": 61,
+    "approved": 33,
+    "pendentes_antigos": 0
    }
   },
   "analytics": {
@@ -90,7 +89,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-24T01:24:00.000Z",
+   "ultimo_sinal": "2026-10-24T01:25:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +109,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-24T01:24:00.000Z",
+   "ultimo_sinal": "2026-10-24T01:25:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,8 +119,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-24T01:24:00.000Z",
-   "ultima_publicacao": "2026-10-24T01:24:00.000Z",
+   "ultimo_sinal": "2026-10-24T01:25:00.000Z",
+   "ultima_publicacao": "2026-10-24T01:25:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
