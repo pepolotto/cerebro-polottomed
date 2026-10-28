@@ -3,24 +3,24 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z",
-   "detalhe": "HTTP 200 · 784 ms"
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z",
+   "detalhe": "HTTP 200 · 759 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z",
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
-    "concluidas": 139,
+    "concluidas": 140,
     "falhas": 1,
     "falhas_consecutivas": 0,
     "revisao": 0,
     "espera_max_ms": 0,
     "execucao_max_ms": 0,
-    "ultima_conclusao": "2026-10-28T01:02:00.000Z",
+    "ultima_conclusao": "2026-10-28T11:13:00.000Z",
     "ultima_falha": "2026-10-13T16:02:00.000Z",
-    "ultima_duracao_ms": 8108,
+    "ultima_duracao_ms": 10098,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
@@ -28,19 +28,19 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z",
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
-    "concluidas": 53,
+    "concluidas": 54,
     "falhas": 0,
     "falhas_consecutivas": 0,
     "revisao": 0,
     "espera_max_ms": 0,
     "execucao_max_ms": 0,
-    "ultima_conclusao": "2026-10-28T01:02:00.000Z",
+    "ultima_conclusao": "2026-10-28T11:13:00.000Z",
     "ultima_falha": null,
-    "ultima_duracao_ms": 5071,
+    "ultima_duracao_ms": 6146,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
@@ -48,33 +48,33 @@
   },
   "ajudante": {
    "estado": "sob_demanda",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z"
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z"
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z",
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
-    "concluidas": 132,
+    "concluidas": 135,
     "falhas": 4,
     "falhas_consecutivas": 0,
     "revisao": 0,
     "espera_max_ms": 0,
     "execucao_max_ms": 0,
-    "ultima_conclusao": "2026-10-27T14:41:00.000Z",
+    "ultima_conclusao": "2026-10-28T11:13:00.000Z",
     "ultima_falha": "2026-10-18T14:03:00.000Z",
-    "ultima_duracao_ms": 38,
+    "ultima_duracao_ms": 31,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "267 published · 61 rejected · 27 approved · 11 pending",
+   "detalhe": "267 published · 61 rejected · 30 approved · 8 pending",
    "processo": "online",
    "conteudos": {
     "published": 267,
     "rejected": 61,
-    "approved": 27,
-    "pending": 11,
+    "approved": 30,
+    "pending": 8,
     "pendentes_antigos": 0
    }
   },
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z",
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z",
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,8 +120,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-10-28T11:12:00.000Z",
-   "ultima_publicacao": "2026-10-28T11:11:00.000Z",
+   "ultimo_sinal": "2026-10-28T11:13:00.000Z",
+   "ultima_publicacao": "2026-10-28T11:12:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
