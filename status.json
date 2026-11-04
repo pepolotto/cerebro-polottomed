@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-11-04T22:25:00.000Z",
+ "gerado_em": "2026-11-04T22:30:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-04T22:29:00.000Z",
-   "detalhe": "HTTP 200 · 235 ms"
+   "ultimo_sinal": "2026-11-04T22:30:00.000Z",
+   "detalhe": "HTTP 200 · 199 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-04T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-04T22:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-04T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-04T22:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-04T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-04T22:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -68,14 +68,15 @@
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "295 published · 61 rejected · 24 approved · 1 failed · 16 pending",
+   "detalhe": "295 published · 61 rejected · 23 approved · 1 failed · 16 pending · 1 publishing",
    "processo": "online",
    "conteudos": {
     "published": 295,
     "rejected": 61,
-    "approved": 24,
+    "approved": 23,
     "failed": 1,
     "pending": 16,
+    "publishing": 1,
     "pendentes_antigos": 0
    }
   },
@@ -91,7 +92,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-04T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-04T22:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -111,7 +112,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-04T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-04T22:30:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -121,8 +122,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-04T22:29:00.000Z",
-   "ultima_publicacao": "2026-11-04T22:28:00.000Z",
+   "ultimo_sinal": "2026-11-04T22:30:00.000Z",
+   "ultima_publicacao": "2026-11-04T22:29:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
