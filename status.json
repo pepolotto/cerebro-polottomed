@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-11-07T16:50:00.000Z",
+ "gerado_em": "2026-11-07T16:55:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T16:54:00.000Z",
-   "detalhe": "HTTP 200 · 602 ms"
+   "ultimo_sinal": "2026-11-07T16:55:00.000Z",
+   "detalhe": "HTTP 200 · 404 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T16:54:00.000Z",
+   "ultimo_sinal": "2026-11-07T16:55:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T16:54:00.000Z",
+   "ultimo_sinal": "2026-11-07T16:55:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T16:54:00.000Z",
+   "ultimo_sinal": "2026-11-07T16:55:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -68,12 +68,12 @@
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "303 published · 62 rejected · 27 approved · 12 pending",
+   "detalhe": "305 published · 62 rejected · 25 approved · 12 pending",
    "processo": "online",
    "conteudos": {
-    "published": 303,
+    "published": 305,
     "rejected": 62,
-    "approved": 27,
+    "approved": 25,
     "pending": 12,
     "pendentes_antigos": 0
    }
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T16:54:00.000Z",
+   "ultimo_sinal": "2026-11-07T16:55:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T16:54:00.000Z",
+   "ultimo_sinal": "2026-11-07T16:55:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,9 +120,10 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T16:54:00.000Z",
-   "ultima_publicacao": null,
+   "ultimo_sinal": "2026-11-07T16:56:00.000Z",
+   "ultima_publicacao": "2026-11-07T16:55:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
- }
+ },
+ "controle_url": "https://adopted-game-warned-echo.trycloudflare.com/"
 }
