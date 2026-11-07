@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T22:30:00.000Z",
-   "detalhe": "HTTP 200 · 710 ms"
+   "ultimo_sinal": "2026-11-07T22:31:00.000Z",
+   "detalhe": "HTTP 200 · 379 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-07T22:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-07T22:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -68,14 +68,13 @@
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "305 published · 62 rejected · 24 approved · 12 pending · 1 publishing",
+   "detalhe": "306 published · 62 rejected · 24 approved · 12 pending",
    "processo": "online",
    "conteudos": {
-    "published": 305,
+    "published": 306,
     "rejected": 62,
     "approved": 24,
     "pending": 12,
-    "publishing": 1,
     "pendentes_antigos": 0
    }
   },
@@ -91,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T22:30:00.000Z",
+   "ultimo_sinal": "2026-11-07T22:31:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -111,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T22:30:00.000Z",
+   "ultimo_sinal": "2026-11-07T22:31:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -121,8 +120,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T22:30:00.000Z",
-   "ultima_publicacao": "2026-11-07T22:29:00.000Z",
+   "ultimo_sinal": "2026-11-07T22:31:00.000Z",
+   "ultima_publicacao": "2026-11-07T22:30:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
