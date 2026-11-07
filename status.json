@@ -4,11 +4,11 @@
   "site": {
    "estado": "ativo",
    "ultimo_sinal": "2026-11-07T17:36:00.000Z",
-   "detalhe": "HTTP 200 · 2030 ms"
+   "detalhe": "HTTP 200 · 311 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T17:35:00.000Z",
+   "ultimo_sinal": "2026-11-07T17:36:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T17:35:00.000Z",
+   "ultimo_sinal": "2026-11-07T17:36:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-07T17:35:00.000Z",
+   "ultimo_sinal": "2026-11-07T17:36:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -121,7 +121,7 @@
   "sinapse": {
    "estado": "ativo",
    "ultimo_sinal": "2026-11-07T17:36:00.000Z",
-   "ultima_publicacao": "2026-11-07T17:35:00.000Z",
+   "ultima_publicacao": "2026-11-07T17:36:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
