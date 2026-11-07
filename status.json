@@ -1,10 +1,10 @@
 {
- "gerado_em": "2026-11-07T17:15:00.000Z",
+ "gerado_em": "2026-11-07T17:20:00.000Z",
  "agentes": {
   "site": {
-   "estado": "atencao",
+   "estado": "ativo",
    "ultimo_sinal": "2026-11-07T17:20:00.000Z",
-   "detalhe": "site não respondeu em 10 s"
+   "detalhe": "HTTP 200 · 195 ms"
   },
   "theo": {
    "estado": "ativo",
@@ -121,7 +121,7 @@
   "sinapse": {
    "estado": "ativo",
    "ultimo_sinal": "2026-11-07T17:20:00.000Z",
-   "ultima_publicacao": "2026-11-07T17:19:00.000Z",
+   "ultima_publicacao": "2026-11-07T17:20:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
