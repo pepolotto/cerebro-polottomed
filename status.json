@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
-   "detalhe": "HTTP 200 · 691 ms"
+   "ultimo_sinal": "2026-11-09T01:39:00.000Z",
+   "detalhe": "HTTP 200 · 205 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
+   "ultimo_sinal": "2026-11-09T01:39:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
+   "ultimo_sinal": "2026-11-09T01:39:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,10 +52,10 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
+   "ultimo_sinal": "2026-11-09T01:39:00.000Z",
    "operacional": {
     "pendentes": 0,
-    "em_execucao": 0,
+    "em_execucao": 1,
     "concluidas": 169,
     "falhas": 4,
     "falhas_consecutivas": 0,
@@ -85,12 +85,12 @@
   },
   "editor": {
    "estado": "sob_demanda",
-   "ultimo_sinal": "2026-11-09T00:55:00.000Z",
+   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
    "detalhe": "Edição sob demanda pelo Arthur ou painel."
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
+   "ultimo_sinal": "2026-11-09T01:39:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
+   "ultimo_sinal": "2026-11-09T01:39:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,8 +120,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-09T01:38:00.000Z",
-   "ultima_publicacao": "2026-11-09T01:37:00.000Z",
+   "ultimo_sinal": "2026-11-09T01:39:00.000Z",
+   "ultima_publicacao": "2026-11-09T01:38:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
