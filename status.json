@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-11-10T01:30:00.000Z",
+ "gerado_em": "2026-11-10T01:35:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:34:00.000Z",
-   "detalhe": "HTTP 200 · 304 ms"
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z",
+   "detalhe": "HTTP 200 · 352 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:34:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -27,32 +27,32 @@
    "detalhe": "0 na fila · 0 em execução"
   },
   "estela": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-11-10T01:34:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z",
    "operacional": {
     "pendentes": 0,
-    "em_execucao": 1,
-    "concluidas": 76,
+    "em_execucao": 0,
+    "concluidas": 77,
     "falhas": 4,
-    "falhas_consecutivas": 3,
+    "falhas_consecutivas": 0,
     "revisao": 3,
     "espera_max_ms": 0,
-    "execucao_max_ms": 240000,
-    "ultima_conclusao": "2026-11-09T18:00:00.000Z",
+    "execucao_max_ms": 0,
+    "ultima_conclusao": "2026-11-10T01:35:00.000Z",
     "ultima_falha": "2026-11-09T23:21:00.000Z",
-    "ultima_duracao_ms": 29,
+    "ultima_duracao_ms": 314817,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "Falhas consecutivas exigem revisão."
+   "detalhe": "0 na fila · 0 em execução"
   },
   "ajudante": {
    "estado": "sob_demanda",
-   "ultimo_sinal": "2026-11-10T01:32:00.000Z"
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z"
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-10T01:34:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:34:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:34:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,8 +120,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:34:00.000Z",
-   "ultima_publicacao": "2026-11-10T01:33:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:35:00.000Z",
+   "ultima_publicacao": "2026-11-10T01:34:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
