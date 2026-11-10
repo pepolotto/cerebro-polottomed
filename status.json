@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T16:02:00.000Z",
-   "detalhe": "HTTP 200 · 818 ms"
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
+   "detalhe": "HTTP 200 · 195 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T16:02:00.000Z",
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T16:02:00.000Z",
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,19 +52,19 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-10T16:02:00.000Z",
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
    "operacional": {
-    "pendentes": 1,
+    "pendentes": 0,
     "em_execucao": 1,
-    "concluidas": 188,
+    "concluidas": 189,
     "falhas": 7,
     "falhas_consecutivas": 0,
     "revisao": 3,
-    "espera_max_ms": 60000,
-    "execucao_max_ms": 180000,
-    "ultima_conclusao": "2026-11-10T15:55:00.000Z",
+    "espera_max_ms": 0,
+    "execucao_max_ms": 0,
+    "ultima_conclusao": "2026-11-10T16:03:00.000Z",
     "ultima_falha": "2026-11-10T15:48:00.000Z",
-    "ultima_duracao_ms": 441922,
+    "ultima_duracao_ms": 222621,
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
@@ -85,12 +85,12 @@
   },
   "editor": {
    "estado": "sob_demanda",
-   "ultimo_sinal": "2026-11-10T15:59:00.000Z",
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
    "detalhe": "Edição sob demanda pelo Arthur ou painel."
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T16:02:00.000Z",
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T16:02:00.000Z",
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -119,10 +119,10 @@
    "detalhe": "protótipo — geração manual"
   },
   "sinapse": {
-   "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T16:02:00.000Z",
+   "estado": "atencao",
+   "ultimo_sinal": "2026-11-10T16:03:00.000Z",
    "ultima_publicacao": "2026-11-10T16:01:00.000Z",
-   "detalhe": "Coleta operacional ativa."
+   "detalhe": "Publicação anterior falhou; nova tentativa automática."
   }
  },
  "controle_url": "https://adopted-game-warned-echo.trycloudflare.com/"
