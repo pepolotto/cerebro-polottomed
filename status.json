@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-11-10T01:25:00.000Z",
+ "gerado_em": "2026-11-10T01:30:00.000Z",
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:29:00.000Z",
-   "detalhe": "HTTP 200 · 278 ms"
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z",
+   "detalhe": "HTTP 200 · 271 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:29:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,10 +28,10 @@
   },
   "estela": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-10T01:29:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z",
    "operacional": {
     "pendentes": 0,
-    "em_execucao": 0,
+    "em_execucao": 1,
     "concluidas": 76,
     "falhas": 4,
     "falhas_consecutivas": 3,
@@ -47,12 +47,12 @@
    "detalhe": "Falhas consecutivas exigem revisão."
   },
   "ajudante": {
-   "estado": "parado",
-   "ultimo_sinal": "2026-11-08T06:29:00.000Z"
+   "estado": "sob_demanda",
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z"
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-10T01:29:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:29:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:29:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,8 +120,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T01:29:00.000Z",
-   "ultima_publicacao": "2026-11-10T01:28:00.000Z",
+   "ultimo_sinal": "2026-11-10T01:30:00.000Z",
+   "ultima_publicacao": "2026-11-10T01:29:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
