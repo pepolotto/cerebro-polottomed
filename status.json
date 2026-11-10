@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T07:56:00.000Z",
-   "detalhe": "HTTP 200 · 300 ms"
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z",
+   "detalhe": "HTTP 200 · 675 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T07:56:00.000Z",
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,10 +28,10 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T07:56:00.000Z",
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z",
    "operacional": {
     "pendentes": 0,
-    "em_execucao": 0,
+    "em_execucao": 1,
     "concluidas": 78,
     "falhas": 4,
     "falhas_consecutivas": 0,
@@ -44,15 +44,15 @@
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "0 na fila · 0 em execução"
+   "detalhe": "0 na fila · 1 em execução"
   },
   "ajudante": {
    "estado": "sob_demanda",
-   "ultimo_sinal": "2026-11-10T07:26:00.000Z"
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z"
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-10T07:56:00.000Z",
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T07:56:00.000Z",
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T07:56:00.000Z",
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,8 +120,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-10T07:56:00.000Z",
-   "ultima_publicacao": "2026-11-10T07:55:00.000Z",
+   "ultimo_sinal": "2026-11-10T07:57:00.000Z",
+   "ultima_publicacao": "2026-11-10T07:56:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
