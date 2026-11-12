@@ -2,9 +2,9 @@
  "gerado_em": "2026-11-12T12:50:00.000Z",
  "agentes": {
   "site": {
-   "estado": "atencao",
+   "estado": "ativo",
    "ultimo_sinal": "2026-11-12T12:53:00.000Z",
-   "detalhe": "site não respondeu em 10 s"
+   "detalhe": "HTTP 200 · 4446 ms"
   },
   "theo": {
    "estado": "ativo",
@@ -119,10 +119,10 @@
    "detalhe": "protótipo — geração manual"
   },
   "sinapse": {
-   "estado": "atencao",
+   "estado": "ativo",
    "ultimo_sinal": "2026-11-12T12:53:00.000Z",
-   "ultima_publicacao": "2026-11-12T12:37:00.000Z",
-   "detalhe": "Publicação anterior falhou; nova tentativa automática."
+   "ultima_publicacao": "2026-11-12T12:53:00.000Z",
+   "detalhe": "Coleta operacional ativa."
   }
  },
  "controle_url": "https://adopted-game-warned-echo.trycloudflare.com/"
