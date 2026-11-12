@@ -8,7 +8,7 @@
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-12T12:57:00.000Z",
+   "ultimo_sinal": "2026-11-12T12:58:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -121,7 +121,7 @@
   "sinapse": {
    "estado": "ativo",
    "ultimo_sinal": "2026-11-12T12:58:00.000Z",
-   "ultima_publicacao": "2026-11-12T12:57:00.000Z",
+   "ultima_publicacao": "2026-11-12T12:58:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
