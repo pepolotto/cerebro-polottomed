@@ -119,10 +119,10 @@
    "detalhe": "protótipo — geração manual"
   },
   "sinapse": {
-   "estado": "ativo",
+   "estado": "atencao",
    "ultimo_sinal": "2026-11-12T13:54:00.000Z",
    "ultima_publicacao": "2026-11-12T13:52:00.000Z",
-   "detalhe": "Coleta operacional ativa."
+   "detalhe": "Publicação anterior falhou; nova tentativa automática."
   }
  },
  "controle_url": "https://adopted-game-warned-echo.trycloudflare.com/"
