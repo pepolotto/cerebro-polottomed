@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-21T13:26:00.000Z",
-   "detalhe": "HTTP 200 · 243 ms"
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z",
+   "detalhe": "HTTP 200 · 287 ms"
   },
   "theo": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-21T13:26:00.000Z",
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -28,7 +28,7 @@
   },
   "estela": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-21T13:26:00.000Z",
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -48,11 +48,11 @@
   },
   "ajudante": {
    "estado": "sob_demanda",
-   "ultimo_sinal": "2026-11-21T13:25:00.000Z"
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z"
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-21T13:26:00.000Z",
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -68,14 +68,14 @@
     "fora_do_prazo": 0,
     "recuperacao_pendente": 0
    },
-   "detalhe": "332 published · 66 rejected · 30 approved · 11 failed · 12 pending",
+   "detalhe": "332 published · 66 rejected · 33 approved · 11 failed · 9 pending",
    "processo": "online",
    "conteudos": {
     "published": 332,
     "rejected": 66,
-    "approved": 30,
+    "approved": 33,
     "failed": 11,
-    "pending": 12,
+    "pending": 9,
     "pendentes_antigos": 0
    }
   },
@@ -91,7 +91,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-21T13:26:00.000Z",
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -111,7 +111,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-21T13:26:00.000Z",
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -121,8 +121,8 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-21T13:26:00.000Z",
-   "ultima_publicacao": "2026-11-21T13:25:00.000Z",
+   "ultimo_sinal": "2026-11-21T13:27:00.000Z",
+   "ultima_publicacao": "2026-11-21T13:26:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
  },
