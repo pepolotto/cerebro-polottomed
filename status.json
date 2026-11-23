@@ -1,10 +1,10 @@
 {
- "gerado_em": "2026-11-23T06:25:00.000Z",
+ "gerado_em": "2026-11-23T06:30:00.000Z",
  "agentes": {
   "site": {
-   "estado": "atencao",
+   "estado": "ativo",
    "ultimo_sinal": "2026-11-23T06:30:00.000Z",
-   "detalhe": "site não respondeu em 10 s"
+   "detalhe": "HTTP 200 · 246 ms"
   },
   "theo": {
    "estado": "ativo",
@@ -120,10 +120,10 @@
    "detalhe": "protótipo — geração manual"
   },
   "sinapse": {
-   "estado": "ativo",
+   "estado": "atencao",
    "ultimo_sinal": "2026-11-23T06:30:00.000Z",
    "ultima_publicacao": "2026-11-23T06:29:00.000Z",
-   "detalhe": "Coleta operacional ativa."
+   "detalhe": "Publicação anterior falhou; nova tentativa automática."
   }
  },
  "controle_url": "https://shadows-swimming-government-spectacular.trycloudflare.com/"
