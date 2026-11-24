@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-24T23:55:00.000Z",
-   "detalhe": "HTTP 200 · 484 ms"
+   "ultimo_sinal": "2026-11-24T23:56:00.000Z",
+   "detalhe": "HTTP 200 · 710 ms"
   },
   "theo": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-11-24T23:49:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-11-24T23:56:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -27,8 +27,8 @@
    "detalhe": "0 na fila · 0 em execução"
   },
   "estela": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-11-24T23:49:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-11-24T23:56:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -52,7 +52,7 @@
   },
   "arthur": {
    "estado": "atencao",
-   "ultimo_sinal": "2026-11-24T23:55:00.000Z",
+   "ultimo_sinal": "2026-11-24T23:56:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -91,7 +91,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-24T23:55:00.000Z",
+   "ultimo_sinal": "2026-11-24T23:56:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -111,7 +111,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-24T23:55:00.000Z",
+   "ultimo_sinal": "2026-11-24T23:56:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -121,9 +121,10 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-24T23:55:00.000Z",
-   "ultima_publicacao": null,
+   "ultimo_sinal": "2026-11-24T23:56:00.000Z",
+   "ultima_publicacao": "2026-11-24T23:55:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
- }
+ },
+ "controle_url": "https://purple-hopes-look-benz.trycloudflare.com/"
 }
