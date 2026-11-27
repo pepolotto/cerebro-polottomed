@@ -3,12 +3,12 @@
  "agentes": {
   "site": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-27T18:40:00.000Z",
-   "detalhe": "HTTP 200 · 329 ms"
+   "ultimo_sinal": "2026-11-27T18:41:00.000Z",
+   "detalhe": "HTTP 200 · 197 ms"
   },
   "theo": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-11-27T18:28:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-11-27T18:41:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -27,8 +27,8 @@
    "detalhe": "0 na fila · 0 em execução"
   },
   "estela": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-11-27T18:28:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-11-27T18:41:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -51,8 +51,8 @@
    "ultimo_sinal": "2026-11-23T12:04:00.000Z"
   },
   "arthur": {
-   "estado": "atencao",
-   "ultimo_sinal": "2026-11-27T18:28:00.000Z",
+   "estado": "ativo",
+   "ultimo_sinal": "2026-11-27T18:41:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -90,7 +90,7 @@
   },
   "agnes": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-27T18:40:00.000Z",
+   "ultimo_sinal": "2026-11-27T18:41:00.000Z",
    "operacional": {
     "pendentes": 0,
     "em_execucao": 0,
@@ -110,7 +110,7 @@
   },
   "dalton": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-27T18:40:00.000Z",
+   "ultimo_sinal": "2026-11-27T18:41:00.000Z",
    "detalhe": "Sem telemetria de tarefas; somente sinal de processo."
   },
   "boletim": {
@@ -120,9 +120,10 @@
   },
   "sinapse": {
    "estado": "ativo",
-   "ultimo_sinal": "2026-11-27T18:40:00.000Z",
-   "ultima_publicacao": null,
+   "ultimo_sinal": "2026-11-27T18:41:00.000Z",
+   "ultima_publicacao": "2026-11-27T18:40:00.000Z",
    "detalhe": "Coleta operacional ativa."
   }
- }
+ },
+ "controle_url": "https://bits-partners-mozilla-charlotte.trycloudflare.com/"
 }
